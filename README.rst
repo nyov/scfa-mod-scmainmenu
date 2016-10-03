@@ -2,8 +2,8 @@
 scfa-mod-scmainmenu
 ===================
 
-.. image:: docs/scmainmenu_1.png
-   :target: docs/scmainmenu_1.png
+.. image:: docs/images/scmainmenu_1.png
+   :target: docs/images/scmainmenu_1.png
    :alt: scmainmenu Mod look
 
 

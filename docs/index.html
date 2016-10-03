@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>scfa-mod-scmainmenu</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>scfa-mod-scmainmenu</h1>
+        <h2>Supreme Commander: Forged Alliance Mod bringing the original SC Menu Look to FA</h2>
+      </div>
+      <img src="images/scmainmenu_1.png" alt="scmainmenu Mod look" />
+      <div class="container">
+        <section id="downloads">
+	  <a href="https://github.com/nyov/scfa-mod-scmainmenu/releases/latest" class="btn">Download <code>scmainmenu.scd</code> Mod file</a>
+          <a href="https://github.com/nyov/scfa-mod-scmainmenu" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+<!-- rst2html of README.rst -->
+<div class="section" id="about">
+<h3>About</h3>
+<p><tt class="docutils literal">scmainmenu</tt> is a <strong>Supreme Commander: Forged Alliance</strong> Mod to bring back most of the vanilla SC Menu Look and Music to FA (and FAF); with some slight differences to the original.</p>
+<p>Essentially it is a merge of both Menus, codewise, and takes into account some changes made in FA.</p>
+<p>Aside from that, none of the Menu UI is changed (confirmation dialogs, popup boxes and game lobbies), these continue to have the FA look.</p>
+<p>For &quot;vanilla&quot; FA, the defunkt <em>GPGNet</em> Menu entry is removed, essentially mirroring the FAF client changes.</p>
+<p>This mod is not a <em>Sim mod</em> and neither really a <em>UI mod</em>. It does not change any Sim behavior or gameplay. It also does not modify any ingame UI elements (after a game has started).</p>
+</div>
+<div class="section" id="downloading">
+<h3>Downloading</h3>
+<p>Download the packaged version as <tt class="docutils literal">scmainmenu.scd</tt> from <a class="reference external" href="https://github.com/nyov/scfa-mod-scmainmenu/releases/latest">https://github.com/nyov/scfa-mod-scmainmenu/releases/latest</a> .</p>
+<p>Do not download from the &quot;zipball/master&quot; GH url or the source code zipfile, as these include a top level directory and will not work without manual repackaging.</p>
+</div>
+<div class="section" id="installation">
+<h3>Installation</h3>
+<p>This mod cannot use the Game-inbuilt mod functionality (which only works for ingame mods). The Main menu has long been created and displayed before the game starts loading any ingame mods. For this reason no <tt class="docutils literal">mod_info.lua</tt> is bundled with the mod in the first place.</p>
+<p>Instead this mod shadows the original game files and needs to be installed into the games <tt class="docutils literal">gamedata</tt>-folder:</p>
+<div class="section" id="for-vanilla-fa">
+<h4>For vanilla FA</h4>
+<p>Simply drop the downloaded or source-built <tt class="docutils literal">scmainmenu.scd</tt> in your FA installation inside the <tt class="docutils literal">gamedata</tt> folder. The full path should normally be something like <tt class="docutils literal"><span class="pre">C:\Program</span> Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\gamedata\</tt>.</p>
+<p>(For Linux it may be <tt class="docutils literal"><span class="pre">~/.local/share/wineprefixes/original/drive_c/Program</span> Files/THQ/Gas Powered Games/Supreme Commander - Forged Alliance/gamedata/</tt>.)</p>
+<p>Start the game normally and the mod should be active. To uninstall or deactivate, simply remove the file again.</p>
+</div>
+<div class="section" id="for-steam-fa">
+<h4>For Steam FA</h4>
+<p><strong>This currently does not work, since the Menu does not know about the &quot;Matchmaking&quot; menu entry.</strong> Adding it will be considered for a later version.</p>
+<p>Simply drop the downloaded or source-built <tt class="docutils literal">scmainmenu.scd</tt> in your Steam FA installation inside the <tt class="docutils literal">gamedata</tt> folder.</p>
+<p>The full path for the steam installation should be something like <tt class="docutils literal"><span class="pre">C:\Program</span> Files\Steam\steamapps\common\Supreme Commander Forged Alliance\gamedata\</tt>.</p>
+<p>(For Linux it may be <tt class="docutils literal"><span class="pre">~/.local/share/wineprefixes/original/drive_c/Program\</span> Files/Steam/steamapps/common/Supreme\ Commander\ Forged\ Alliance/gamedata/</tt>.)</p>
+</div>
+<div class="section" id="for-faf">
+<h4>For FAF</h4>
+<p>This one is the most complicated, since FAF defaults to <strong>blacklisting all the things</strong>.</p>
+<p><strong>Option 1</strong>: Rename the file to something whitelisted by the FAF startup file (<tt class="docutils literal">init_faf.lua</tt>).</p>
+<p>In the FA-installation's <tt class="docutils literal">gamedata</tt> folder the filenames <tt class="docutils literal">lobbymanager_v105.scd</tt> or <tt class="docutils literal">sc_music.scd</tt> would work. Unless you happen to have both these mods installed already. Then fall back to <tt class="docutils literal">loc_fr.scd</tt>, <tt class="docutils literal">loc_it.scd</tt>, <tt class="docutils literal">loc_ru.scd</tt> for example; some localization language file you don't happen to have.</p>
+<p>(The hard part may be remembering that the mod is hidden in that filename.)</p>
+<p><strong>Option 2</strong>: Install the mod for the FAF client only, by dropping the file into the <em>FAForever</em> directory.</p>
+<p><em>The mod will not be active when the game is started from a vanilla FA shortcut, unless you also drop it there, as detailed above for vanilla FA.</em></p>
+<p>This should be located somewhere like <tt class="docutils literal"><span class="pre">C:\windows\profiles\All</span> Users\FAForever\gamedata\</tt>.</p>
+<p>To be recognized there, the fileending must be <tt class="docutils literal">.nxt</tt> or <tt class="docutils literal">.nx2</tt>. Renaming the file to <tt class="docutils literal">scmainmenu.nx2</tt> should work.</p>
+<p><strong>Option 3</strong>: Create a custom <tt class="docutils literal">init_fax.lua</tt> startup file.</p>
+<p><em>The mod will not be active when joining or hosting a game through the FAF Lobby client, but in that case you don't get to see the main menu anyway. When FAF is started from the new shortcut for a local game, it will be active.</em></p>
+<p>Copy <tt class="docutils literal"><span class="pre">C:\windows\profiles\All</span> Users\FAForever\bin\init_faf.lua</tt> to <tt class="docutils literal">init_fax.lua</tt>, in the same directory.</p>
+<p>Create a game shortcut on your Desktop to <tt class="docutils literal"><span class="pre">[...]\FAForever\bin\ForgedAlliance.exe</span></tt>, and change the commandline to read <tt class="docutils literal"><span class="pre">[...]ForgedAlliance.exe</span> /init init_fax.lua /nobugreport</tt>.</p>
+<p>Finally load up the <tt class="docutils literal">init_fax.lua</tt> file in a text editor and add a line <tt class="docutils literal">scmainmenu.scd</tt> into the <tt class="docutils literal">whitelist = {}</tt> section.</p>
+<p>(Don't try simply editing the <tt class="docutils literal">init_faf.lua</tt> file. It will be overwritten each time the game is started from the FAF Lobby...)</p>
+<p><strong>Option 4</strong>: <em>Unzip</em> the <tt class="docutils literal">scmainmenu.scd</tt> and just drop the contents (including the full folder paths) into your FA installation directory. (<strong>Outside</strong> the <tt class="docutils literal">gamedata</tt> folder in this case.)</p>
+<p>Make sure none of the files exist already so nothing gets overwritten, however that should always be the case for a normal, unmodded installation.</p>
+</div>
+</div>
+<!-- // rst2html of README.rst -->
+
+    </div>
+  </body>
+</html>
